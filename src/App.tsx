@@ -3,6 +3,7 @@ import HomePage from "./components/HomePage/HomePage";
 import Navbar from "./components//Navbar/Navbar"; 
 import Room from "./components/Room";
 
+
 const App = () => {
 
   return (
@@ -11,7 +12,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<HomePage /> } />
       <Route path="room/:roomPath" element={<Room /> } />
-      {/* <Route path="room/:roomPath" element={<RoomDetails /> } />  */}
+    
   
     </Routes>
     </BrowserRouter>
