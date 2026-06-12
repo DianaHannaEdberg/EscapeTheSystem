@@ -1,0 +1,31 @@
+body {
+    background-color: rgb(42, 40, 40);
+    color: white;
+}
+
+.home-page {
+    padding:80px 40px;
+    text-align: center;
+    padding-top: 120px;
+}
+
+.home-page h1 {
+    color: rgb(217, 109, 109);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 80px;
+    text-transform: uppercase;
+
+}  
+
+.homepage p {
+    font: 20px;
+    font-size: 20px;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 18px auto;
+    color: rgb(239, 230, 230)
+}
+
+

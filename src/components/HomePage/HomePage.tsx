@@ -1,11 +1,31 @@
+import "./HomePage.css"
+import { Button} from "@mui/material";
+import { Link } from "react-router-dom";
+
 export const HomePage = () => {
   return (
-    <div>
+    <div className="home-page">
       <h1>Escape the system</h1>
-      <h2>Project Nexus</h2>
+    
       <p>Du befinner dig i en övergiven anläggning. Dörrarna är låsta och systemet svarar inte.</p>
       <p>För att komma ut måste du hitta en väg som leder till en säker utgång</p>
       <p>Hitta den dolda utgången innan det är försent!</p>
+
+      <Button 
+      component={Link}
+      to="/room/server-room"
+      variant="contained"
+
+      sx={{ 
+        backgroundColor: "crimson" , 
+        fontSize: "15px",
+        padding: "7px 20px"
+
+      }}
+
+      >
+        Start the game
+      </Button>
 
 
     </div>
