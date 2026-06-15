@@ -2,12 +2,15 @@ import { useParams } from "react-router-dom";
 import rooms from "./../data/rooms.json"; 
 import items from "../data/items.json";
 import { useInventory } from "./InventoryContext"; 
+import { useState } from "react";
 
 
 const Room = () => {
     const { roomPath } = useParams();  
 
     const { inventory, addItem } = useInventory();
+
+    const [exitSolve, setExitSolve] = useState(false);
 
    const room = rooms.find(r => r.roomPath === roomPath); 
 
@@ -16,17 +19,24 @@ const Room = () => {
    }
 
 
-  const roomIsSolved = inventory.some( 
+  let roomIsSolved = inventory.some( 
     (i) => i.id === room.itemToAdd);
+
+    if (room.itemToAdd === null) {
+      roomIsSolved = exitSolve;
+    }
 
    const handleItemClick = (item) => {
     if (item.id === room.itemToSolve && !roomIsSolved) {
+      if (room.itemToAdd === null) {
+        setExitSolve(true);
+      } else {
       const reward = items.find(
         (i)=> i.id === room.itemToAdd);
-
-
+ 
       if (reward)
         addItem(reward)
+    }
     }
   }
         let instruction = room.unsolvedInstruction;
@@ -35,17 +45,24 @@ const Room = () => {
           instruction = room.solvedInstruction;
         }
 
+        let image = room.unsolvedImage; 
+        if (roomIsSolved) {
+          image = room.solvedImage;
+        }
+
+
   return (
     <div>
         <h1>{ room.roomName }</h1>
 
         <p>{instruction}</p>
+        <img src={image} alt={room.roomName} style={{ width: "300px" }} />
 
         <div>
       
         {inventory.map((inventoryItem) => (
 
-        <button key={inventoryItem} 
+        <button key={inventoryItem.id} 
         onClick={() => handleItemClick(inventoryItem)}>
 
           {inventoryItem.item}
