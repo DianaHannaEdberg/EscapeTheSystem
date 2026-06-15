@@ -6,11 +6,15 @@ export const InventoryContext = createContext()
 const uvLight = items.find(i => i.id === 1) 
 
 export function InventoryProvider({ children }) {
+
   const [inventory, setInventory] = useState([uvLight])
 
   const addItem = (item) => {
-    setInventory(prev => [...prev, item])
+
+    setInventory([...inventory, item])
+
   }
+
 
   return (
     <InventoryContext.Provider value={{ inventory, addItem }}>
@@ -20,6 +24,4 @@ export function InventoryProvider({ children }) {
 }
 
 
-export function useInventory() {
-  return useContext(InventoryContext)
-}
+export default InventoryContext;
