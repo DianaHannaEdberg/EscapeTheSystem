@@ -1,7 +1,7 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import HomePage from "./components/HomePage/HomePage";
 import Navbar from "./components//Navbar/Navbar"; 
-import Room from "./components/Room";
+import Room from "./components/Room/Room";
 import { InventoryProvider } from "./components/InventoryContext";
 
 

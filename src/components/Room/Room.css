@@ -1,0 +1,51 @@
+.room {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.room h1 {
+  font-size: 48px;
+  color: #e57373;
+  margin-bottom: 20px;
+}
+
+.room p {
+  font-size: 22px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+}
+
+.room img {
+  width: 350px;
+  border-radius: 12px;
+  border: 2px solid crimson;
+  margin-bottom: 30px;
+}
+
+.inventory {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.inventory button:hover {
+  background-color: crimson;
+}
+.inventory button {
+  background-color: #111;
+  color: white;
+  border: 1px solid crimson;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.inventory button.used-item {
+  background-color: green;
+  border-color: limegreen;
+  color: white;
+}

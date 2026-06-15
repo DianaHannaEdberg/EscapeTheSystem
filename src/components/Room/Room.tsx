@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import rooms from "./../data/rooms.json"; 
-import items from "../data/items.json";
-import { useInventory } from "./InventoryContext"; 
+import rooms from "../../data/rooms.json"; 
+import items from "../../data/items.json";
+import { useInventory } from "../InventoryContext"; 
 import { useState } from "react";
-
+import "./Room.css";
 
 const Room = () => {
     const { roomPath } = useParams();  
@@ -52,18 +52,22 @@ const Room = () => {
 
 
   return (
-    <div>
+    <div className="room">
         <h1>{ room.roomName }</h1>
 
         <p>{instruction}</p>
         <img src={image} alt={room.roomName} style={{ width: "300px" }} />
 
-        <div>
+        <div className="inventory">
       
         {inventory.map((inventoryItem) => (
 
-        <button key={inventoryItem.id} 
-        onClick={() => handleItemClick(inventoryItem)}>
+        <button 
+        key={inventoryItem.id} 
+        onClick={() => handleItemClick(inventoryItem)}
+          className= {roomIsSolved && inventoryItem.id === room.itemToSolve 
+          ? "used-item" : ""}
+          >
 
           {inventoryItem.item}
         </button>
