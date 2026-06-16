@@ -24,4 +24,6 @@ export function InventoryProvider({ children }) {
 }
 
 
-export default InventoryContext;
+export function useInventory() {
+  return useContext(InventoryContext)
+};

@@ -5,7 +5,11 @@ import { useInventory } from "../InventoryContext";
 import { useState } from "react";
 import "./Room.css";
 
+
 const Room = () => {
+
+
+
     const { roomPath } = useParams();  
 
     const { inventory, addItem } = useInventory();
@@ -36,6 +40,7 @@ const Room = () => {
  
       if (reward)
         addItem(reward)
+        
     }
     }
   }
@@ -57,6 +62,8 @@ const Room = () => {
 
         <p>{instruction}</p>
         <img src={image} alt={room.roomName} style={{ width: "300px" }} />
+
+      
 
         <div className="inventory">
       

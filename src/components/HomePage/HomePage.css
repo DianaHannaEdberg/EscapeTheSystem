@@ -19,13 +19,30 @@ body {
 
 }  
 
-.homepage p {
+.home-page p {
     font: 20px;
     font-size: 20px;
     line-height: 1.7;
     max-width: 750px;
     margin: 18px auto;
-    color: rgb(239, 230, 230)
+    color: rgb(239, 230, 230);
+    padding:40 px; 
+    border-radius: 12px;
 }
 
 
+.home-page .MuiCardContent-root {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+  border: 2px solid crimson;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.home-page p {
+  margin: 15px 0;
+  font-size: 20px;
+  line-height: 1.7;
+  color: white;
+}
