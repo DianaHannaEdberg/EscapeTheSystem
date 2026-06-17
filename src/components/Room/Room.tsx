@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import rooms from "../../data/rooms.json"; 
 import items from "../../data/items.json";
-import { useInventory } from "../InventoryContext"; 
+import { useInventory, type Item } from "../InventoryContext.tsx"; 
 import { useState } from "react";
 import "./Room.css";
 
@@ -30,7 +30,7 @@ const Room = () => {
       roomIsSolved = exitSolve;
     }
 
-   const handleItemClick = (item) => {
+   const handleItemClick = (item: Item) => {
     if (item.id === room.itemToSolve && !roomIsSolved) {
       if (room.itemToAdd === null) {
         setExitSolve(true);
@@ -70,13 +70,19 @@ const Room = () => {
         {inventory.map((inventoryItem) => (
 
         <button 
+        type="button"
         key={inventoryItem.id} 
         onClick={() => handleItemClick(inventoryItem)}
           className= {roomIsSolved && inventoryItem.id === room.itemToSolve 
-          ? "used-item" : ""}
+          ? "used-item item-button" 
+          : "item-button"}
           >
+            <img 
+            className="room-image" 
+            src={inventoryItem.image} alt={inventoryItem.item} />
+            <span>{inventoryItem.item}</span>
 
-          {inventoryItem.item}
+      
         </button>
 
       ))}

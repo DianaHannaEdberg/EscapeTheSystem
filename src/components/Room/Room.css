@@ -18,34 +18,57 @@
   margin: 0 auto 30px auto;
 }
 
-.room img {
-  width: 350px;
-  border-radius: 12px;
-  border: 2px solid crimson;
-  margin-bottom: 30px;
+
+.inventory button:hover {
+  background-color: crimson;
 }
 
 .inventory {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
-.inventory button:hover {
-  background-color: crimson;
+.item-button {
+  width: 100px;
+  height: 100px;
+   background-color: #111; 
+   border: 2px solid #6b4bb8; 
+  border-radius: 6px;
+
+   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} 
+
+.item-button img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 8px;
 }
-.inventory button {
-  background-color: #111;
-  color: white;
-  border: 1px solid crimson;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
+ 
+.item-button span {
+  font-size: 13px;
+  text-align: center;
 }
 
-.inventory button.used-item {
-  background-color: green;
+.item-button:hover {
+  border-color: crimson;
+}
+
+.item-button.used-item {
   border-color: limegreen;
-  color: white;
+  background-color: #123d22;
+}
+
+.room-image {
+  width: 350px;
+  border-radius: 12px;
+ 
+  margin-bottom: 30px;
 }
